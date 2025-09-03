@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Solar - Luxury Property Rental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#home" class="logo">CASA SOLAR</a>
+                <ul class="nav-links" id="nav-links">
+                    <li class="mobile-menu-close">
+                        <button class="close-button" onclick="closeMenu()" aria-label="Close menu">×</button>
+                    </li>
+                    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#amenities" onclick="closeMenu()">Amenities</a></li>
+                    <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                    <li><a href="#testimonials" onclick="closeMenu()">Reviews</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>CASA SOLAR</h1>
+            <p>EXPERIENCE LUXURY LIVING</p>
+            <a href="#contact" class="btn btn-primary">BOOK NOW</a>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToSection('#about')">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-header">
+                <h2 class="section-title">ABOUT CASA SOLAR</h2>
+                <p class="about-subtitle">Experience comfort and convenience in the heart of Old Town</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>YOUR PERFECT GETAWAY</h3>
+                    <p>Casa Solar is a fully equipped 1-bedroom apartment featuring a spacious living room and kitchen open space area, perfectly designed for comfort and convenience. Located in the quiet corner of Old Town, this amazing apartment offers the best of both worlds - peaceful surroundings with easy access to all the action.</p>
+                    
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V8Z" fill="currentColor"/>
+                                    <circle cx="7" cy="14" r="2" fill="white"/>
+                                    <circle cx="17" cy="14" r="2" fill="white"/>
+                                    <path d="M7 8H17V10H7V8Z" fill="white"/>
+                                    <path d="M5 12H19V14H5V12Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <h4>FREE PARKING</h4>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="8" y="2" width="8" height="20" rx="1" fill="currentColor"/>
+                                    <rect x="10" y="4" width="4" height="2" fill="white"/>
+                                    <rect x="10" y="8" width="4" height="2" fill="white"/>
+                                    <rect x="10" y="12" width="4" height="2" fill="white"/>
+                                    <rect x="10" y="16" width="4" height="2" fill="white"/>
+                                    <circle cx="12" cy="6" r="1" fill="white"/>
+                                    <circle cx="12" cy="10" r="1" fill="white"/>
+                                    <circle cx="12" cy="14" r="1" fill="white"/>
+                                    <circle cx="12" cy="18" r="1" fill="white"/>
+                                </svg>
+                            </div>
+                            <h4>ELEVATOR ACCESS</h4>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="4" width="18" height="16" rx="2" fill="currentColor"/>
+                                    <rect x="5" y="6" width="14" height="2" fill="white"/>
+                                    <rect x="5" y="10" width="14" height="2" fill="white"/>
+                                    <rect x="5" y="14" width="14" height="2" fill="white"/>
+                                    <circle cx="8" cy="8" r="1" fill="white"/>
+                                    <circle cx="16" cy="8" r="1" fill="white"/>
+                                </svg>
+                            </div>
+                            <h4>FULLY EQUIPPED KITCHEN</h4>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" fill="currentColor"/>
+                                    <circle cx="12" cy="10" r="3" fill="white"/>
+                                    <path d="M12 2L12 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M12 16L12 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M2 10L4 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M20 10L22 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h4>STEPS FROM OLD TOWN</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities section" id="amenities">
+        <div class="container">
+            <h2 class="section-title">AMENITIES</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="18" height="16" rx="2" fill="currentColor"/>
+                            <rect x="5" y="6" width="14" height="2" fill="white"/>
+                            <rect x="5" y="10" width="14" height="2" fill="white"/>
+                            <rect x="5" y="14" width="14" height="2" fill="white"/>
+                            <circle cx="8" cy="8" r="1" fill="white"/>
+                            <circle cx="16" cy="8" r="1" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3>FULLY EQUIPPED KITCHEN</h3>
+                    <p>Modern kitchen with premium appliances, cookware, and all necessary utensils for your culinary needs</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" fill="currentColor"/>
+                            <circle cx="12" cy="10" r="3" fill="white"/>
+                            <path d="M12 2L12 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 16L12 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M2 10L4 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M20 10L22 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>SECONDS FROM OLD TOWN</h3>
+                    <p>Prime location just minutes away from the historic old town and downtown area for easy exploration</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.9 3.9 4 5 4H19C20.1 4 21 4.9 21 6V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V6Z" fill="currentColor"/>
+                            <circle cx="8" cy="8" r="2" fill="white"/>
+                            <circle cx="16" cy="8" r="2" fill="white"/>
+                            <path d="M6 12H18V14H6V12Z" fill="white"/>
+                            <path d="M8 16H16V18H8V16Z" fill="white"/>
+                            <circle cx="12" cy="17" r="1" fill="currentColor"/>
+                        </svg>
+                </div>
+                    <h3>WASHING MACHINE</h3>
+                    <p>Convenient in-unit washing machine for your laundry needs during your stay</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V8Z" fill="currentColor"/>
+                            <circle cx="7" cy="14" r="2" fill="white"/>
+                            <circle cx="17" cy="14" r="2" fill="white"/>
+                            <path d="M7 8H17V10H7V8Z" fill="white"/>
+                            <path d="M5 12H19V14H5V12Z" fill="white"/>
+                        </svg>
+                </div>
+                    <h3>PARKING</h3>
+                    <p>Convenient parking space available for your vehicle during your stay</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">GALLERY</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item featured" onclick="openLightbox('imagens/livingroom1.jpg')">
+                    <img src="imagens/livingroom1.jpg" alt="Living Room">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/cozinha.jpg')">
+                    <img src="imagens/cozinha.jpg" alt="Kitchen">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/quarto.jpg')">
+                    <img src="imagens/quarto.jpg" alt="Bedroom">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/wc.jpg')">
+                    <img src="imagens/wc.jpg" alt="Bathroom">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/outdoor.jpeg')">
+                    <img src="imagens/outdoor.jpeg" alt="Outdoor Area">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/hallway.jpg')">
+                    <img src="imagens/hallway.jpg" alt="Hallway">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/livingroom2.jpg')">
+                    <img src="imagens/livingroom2.jpg" alt="Living Room View">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/cozinha2.jpg')">
+                    <img src="imagens/cozinha2.jpg" alt="Kitchen Detail">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('imagens/kitchen3.jpeg')">
+                    <img src="imagens/kitchen3.jpeg" alt="Kitchen Appliances">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">TESTIMONIALS</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Casa Solar exceeded all our expectations. The property is absolutely stunning and the amenities are top-notch. We felt like we were staying in a luxury resort.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Family Vacation</p>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Perfect getaway location with incredible attention to detail. The pool area was our favorite spot and the kitchen was perfectly equipped for our cooking needs.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>James Davidson</h4>
+                            <p>Romantic Retreat</p>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Outstanding property with exceptional service. The terrace views are breathtaking and the entire space is immaculately maintained. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ER</div>
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Business Trip</p>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>BOOK YOUR STAY</h3>
+                    <p>Contact us today to check availability and make your reservation. Perfect for exploring Old Town on foot while having your car nearby for city adventures!</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" fill="currentColor"/>
+                                <path d="M22 6L12 13L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <p><strong>Email:</strong> info@casasolar.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06679 2.16708 8.43376 2.48353C8.80073 2.79999 9.03996 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" fill="currentColor"/>
+                                <circle cx="12" cy="10" r="3" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <p><strong>Location:</strong> Paradise Beach, Costa del Sol</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">FULL NAME</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dates">PREFERRED DATES</label>
+                        <input type="text" id="dates" name="dates" placeholder="March 15-22, 2024">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">NUMBER OF GUESTS</label>
+                        <input type="number" id="guests" name="guests" min="1" max="4" value="2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">MESSAGE</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your stay preferences or any special requests..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">SEND INQUIRY</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CASA SOLAR</h3>
+                    <p>Experience the perfect holiday in our fully equipped 1-bedroom apartment. Perfect for couples and small groups seeking comfort and convenience in the heart of Old Town.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>NAVIGATION</h3>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#amenities">Amenities</a></p>
+                    <p><a href="#gallery">Gallery</a></p>
+                    <p><a href="#testimonials">Reviews</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>CONTACT INFO</h3>
+                    <p>info@casasolar.com</p>
+                    <p>+1 (555) 123-4567</p>
+                    <p>Paradise Beach, Costa del Sol</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>POLICIES</h3>
+                    <p><a href="#">Terms & Conditions</a></p>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Cancellation Policy</a></p>
+                    <p><a href="#">House Rules</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Casa Solar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
