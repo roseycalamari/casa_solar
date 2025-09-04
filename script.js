@@ -367,6 +367,57 @@ function scrollToSection(sectionId) {
     }
 }
 
+function showTab(tabName) {
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => button.classList.remove('active'));
+    
+    // Add active class to clicked tab button
+    const activeButton = document.querySelector(`[onclick="showTab('${tabName}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+    
+    // Hide all tab panels
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    tabPanels.forEach(panel => panel.classList.remove('active'));
+    
+    // Show selected tab panel
+    const activePanel = document.getElementById(tabName);
+    if (activePanel) {
+        activePanel.classList.add('active');
+    }
+}
+
+function filterGallery(category) {
+    // Remove active class from all filter buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => button.classList.remove('active'));
+    
+    // Add active class to clicked filter button
+    const activeButton = document.querySelector(`[onclick="filterGallery('${category}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+    
+    // Get all gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    // Filter and show/hide items with simple transition
+    galleryItems.forEach((item, index) => {
+        const itemCategory = item.getAttribute('data-category');
+        
+        if (category === 'all' || itemCategory === category) {
+            // Show item
+            item.classList.remove('hidden');
+            item.style.order = index;
+        } else {
+            // Hide item
+            item.classList.add('hidden');
+        }
+    });
+}
+
 
 /**
  * Performance optimization for modern browsers
