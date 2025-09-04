@@ -44,18 +44,12 @@ class CasaSolar {
 
     /**
      * Configure comprehensive event handling system
-     * Implements debounced scroll/resize for optimal performance
+     * Implements immediate scroll handling for maximum responsiveness
      */
     setupEventHandlers() {
-        // Optimized scroll handler with debouncing
+        // Immediate scroll handler for maximum responsiveness
         window.addEventListener('scroll', () => {
-            if (this.scrollTimeout) {
-                cancelAnimationFrame(this.scrollTimeout);
-            }
-            
-            this.scrollTimeout = requestAnimationFrame(() => {
-                this.handleScrollEvents();
-            });
+            this.handleScrollEvents();
         }, { passive: true });
 
         // Responsive design handler
@@ -79,17 +73,15 @@ class CasaSolar {
 
     /**
      * Initialize interactive components
-     * Sets up smooth scrolling and intersection observers
+     * Sets up smooth scrolling
      */
     initializeComponents() {
         this.setupSmoothScrolling();
-        this.setupIntersectionObserver();
-        this.initializeFormValidation();
     }
 
     /**
      * Handle scroll-based UI updates
-     * Manages navbar appearance, parallax effects, and header visibility
+     * Manages navbar appearance and header visibility for maximum performance
      */
     handleScrollEvents() {
         const scrollPosition = window.pageYOffset;
@@ -102,14 +94,11 @@ class CasaSolar {
             this.navbar.classList.remove('scrolled');
         }
 
-        // Header slide behavior
+        // Header visibility based on scroll direction
         this.handleHeaderVisibility(scrollPosition, scrollDirection);
         
         // Update last scroll position
         this.lastScrollY = scrollPosition;
-
-        // Simple parallax effect for hero section
-        this.updateParallaxEffect(scrollPosition);
     }
 
     /**
@@ -147,19 +136,6 @@ class CasaSolar {
     showHeader() {
         this.navbar.classList.remove('hidden');
         this.isHeaderVisible = true;
-    }
-
-    /**
-     * Implement subtle parallax scrolling effect
-     * Provides visual depth while maintaining performance
-     */
-    updateParallaxEffect(scrollPosition) {
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            const parallaxSpeed = -0.2;
-            const yPosition = scrollPosition * parallaxSpeed;
-            heroSection.style.transform = `translateY(${yPosition}px)`;
-        }
     }
 
     /**
@@ -253,89 +229,18 @@ class CasaSolar {
     }
 
     /**
-     * Execute smooth scroll with custom easing
-     * Provides consistent navigation experience across browsers
+     * Execute instant scroll for maximum responsiveness
+     * Provides immediate navigation without delays
      */
     smoothScrollToElement(targetElement) {
         const navbarHeight = this.navbar.offsetHeight;
         const targetPosition = targetElement.offsetTop - navbarHeight;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 800; // Optimized duration for user experience
         
-        let startTime = null;
-
-        const animationStep = (currentTime) => {
-            if (startTime === null) startTime = currentTime;
-            
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-            
-            // Smooth easing function for professional feel
-            const easedProgress = this.easeInOutCubic(progress);
-            
-            window.scrollTo(0, startPosition + (distance * easedProgress));
-            
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animationStep);
-            }
-        };
-
-        requestAnimationFrame(animationStep);
+        // Instant scroll for maximum responsiveness
+        window.scrollTo(0, targetPosition);
     }
 
-    /**
-     * Cubic easing function for smooth animations
-     * Provides professional-grade motion curves
-     */
-    easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }
 
-    /**
-     * Initialize intersection observer for scroll animations
-     * Efficient performance monitoring for element visibility
-     */
-    setupIntersectionObserver() {
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    this.animateElement(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe relevant elements for animation
-        const animatableElements = document.querySelectorAll(
-            '.amenity-card, .gallery-item, .testimonial-card'
-        );
-        
-        animatableElements.forEach(element => {
-            observer.observe(element);
-        });
-    }
-
-    /**
-     * Execute element animation with CSS transitions
-     * Provides smooth reveal effects for content sections
-     */
-    animateElement(element) {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        
-        // Use requestAnimationFrame for smooth transitions
-        requestAnimationFrame(() => {
-            element.style.transition = 'all 0.6s ease';
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-            element.classList.add('animated');
-        });
-    }
 
     /**
      * Navigation menu control system
@@ -404,122 +309,6 @@ class CasaSolar {
         }
     }
 
-    /**
-     * Advanced form validation and submission
-     * Implements comprehensive validation with user feedback
-     */
-    initializeFormValidation() {
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (event) => {
-                this.handleFormSubmit(event);
-            });
-        }
-    }
-
-    handleFormSubmit(event) {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const submissionData = this.extractFormData(formData);
-        
-        // Comprehensive validation
-        const validationResult = this.validateFormData(submissionData);
-        
-        if (validationResult.isValid) {
-            this.processFormSubmission(submissionData);
-            this.resetForm(event.target);
-        } else {
-            this.displayValidationErrors(validationResult.errors);
-        }
-    }
-
-    /**
-     * Extract and structure form data
-     * Provides clean data object for processing
-     */
-    extractFormData(formData) {
-        return {
-            name: formData.get('name')?.trim() || '',
-            email: formData.get('email')?.trim() || '',
-            dates: formData.get('dates')?.trim() || '',
-            guests: parseInt(formData.get('guests')) || 1,
-            message: formData.get('message')?.trim() || ''
-        };
-    }
-
-    /**
-     * Comprehensive form validation system
-     * Implements business rules and data integrity checks
-     */
-    validateFormData(data) {
-        const errors = [];
-
-        // Name validation
-        if (!data.name || data.name.length < 2) {
-            errors.push('Please enter a valid full name (minimum 2 characters)');
-        }
-
-        // Email validation with comprehensive regex
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!data.email || !emailRegex.test(data.email)) {
-            errors.push('Please enter a valid email address');
-        }
-
-        // Guest count validation
-        if (data.guests < 1 || data.guests > 8) {
-            errors.push('Number of guests must be between 1 and 8');
-        }
-
-        return {
-            isValid: errors.length === 0,
-            errors: errors
-        };
-    }
-
-    /**
-     * Process successful form submission
-     * Simulates server communication with user feedback
-     */
-    processFormSubmission(data) {
-        // Display success message
-        this.displaySuccessMessage(data.name, data.email);
-        
-        // Log submission for development/debugging
-        console.log('Form submission processed:', data);
-    }
-
-    /**
-     * Reset form to initial state
-     * Provides clean slate for new submissions
-     */
-    resetForm(formElement) {
-        formElement.reset();
-        
-        // Reset any custom styling or states
-        const inputs = formElement.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.classList.remove('error', 'success');
-        });
-    }
-
-    /**
-     * Display validation errors to user
-     * Provides clear, actionable feedback
-     */
-    displayValidationErrors(errors) {
-        const errorMessage = `Please correct the following issues:\n\n• ${errors.join('\n• ')}`;
-        alert(errorMessage);
-    }
-
-    /**
-     * Display success confirmation
-     * Provides positive user feedback for completed actions
-     */
-    displaySuccessMessage(name, email) {
-        const successMessage = `Thank you, ${name}!\n\nYour inquiry has been submitted successfully.\nWe will respond to ${email} within 24 hours.`;
-        alert(successMessage);
-    }
 
     /**
      * Performance monitoring and optimization
@@ -578,11 +367,6 @@ function scrollToSection(sectionId) {
     }
 }
 
-function handleFormSubmit(event) {
-    if (casaSolarApp) {
-        casaSolarApp.handleFormSubmit(event);
-    }
-}
 
 /**
  * Performance optimization for modern browsers
