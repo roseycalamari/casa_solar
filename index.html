@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa Solar - Luxury Property Rental</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images_discover_albufeira/CASA SOLAR logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images_discover_albufeira/CASA SOLAR logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images_discover_albufeira/CASA SOLAR logo.png">
+    <link rel="apple-touch-icon" href="images_discover_albufeira/CASA SOLAR logo.png">
+    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Casa Solar&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;images_discover_albufeira/CASA SOLAR logo.png&quot;,&quot;sizes&quot;:&quot;any&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,6 +37,25 @@
         #lodgify-book-now-box {    
           width: 100%;
         }
+        
+        /* Custom styling for booking widget */
+        #lodgify-book-now-box .ldg-bnb-input {
+          text-align: left !important;
+          padding-left: 20px !important;
+        }
+        
+        #lodgify-book-now-box .ldg-bnb-input::placeholder {
+          text-align: left !important;
+        }
+        
+        .booking-widget-container {
+          background: transparent !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+        }
       </style>
 </head>
 <body>
@@ -36,18 +63,51 @@
     <nav class="nav" id="navbar">
         <div class="container">
             <div class="nav-container">
-                <a href="#home" class="logo">CASA SOLAR</a>
+                <a href="#home" class="logo">
+                    <img src="images_discover_albufeira/CASA SOLAR logo extended.png" alt="Casa Solar Logo" class="logo-img">
+                </a>
                 <ul class="nav-links" id="nav-links">
-                    <li class="mobile-menu-close">
-                        <button class="close-button" onclick="closeMenu()" aria-label="Close menu">×</button>
-                    </li>
-                    <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                    <li><a href="#about" onclick="closeMenu()">About</a></li>
-                    <li><a href="#amenities" onclick="closeMenu()">Amenities</a></li>
-                    <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
-                    <li><a href="#discover" onclick="closeMenu()">Discover</a></li>
-                    <li><a href="#contact" onclick="closeMenu()">Book Now</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#discover">Discover</a></li>
+                    <li><a href="#contact">Book Now</a></li>
                 </ul>
+                <div class="mobile-menu" id="mobile-menu">
+                    <div class="mobile-menu-header">
+                        <div class="mobile-menu-logo">
+                            <img src="images_discover_albufeira/CASA SOLAR logo extended.png" alt="Casa Solar Logo" class="mobile-logo-img">
+                        </div>
+                        <button class="close-button" onclick="closeMenu()" aria-label="Close menu">×</button>
+                    </div>
+                    
+                    <nav class="mobile-menu-nav">
+                        <ul class="mobile-nav-links">
+                            <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                            <li><a href="#about" onclick="closeMenu()">About</a></li>
+                            <li><a href="#amenities" onclick="closeMenu()">Amenities</a></li>
+                            <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                            <li><a href="#discover" onclick="closeMenu()">Discover</a></li>
+                            <li><a href="#contact" onclick="closeMenu()">Book Now</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="mobile-menu-footer">
+                        <div class="mobile-footer-content">
+                            <p class="mobile-footer-text">Casa Solar - Your Perfect Old Town Getaway</p>
+                            <div class="mobile-footer-contact">
+                                <a href="mailto:support@casasolar-albufeira.com" class="mobile-contact-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Contact Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
             </div>
         </div>
@@ -57,7 +117,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>CASA SOLAR</h1>
-            <p>EXPERIENCE LUXURY LIVING</p>
+            <p>YOUR PERFECT OLD TOWN GETAWAY</p>
             <a href="#contact" class="btn btn-primary">BOOK NOW</a>
         </div>
         <div class="scroll-indicator" onclick="scrollToSection('#about')">
@@ -86,58 +146,28 @@
                     <div class="feature-cards">
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V8Z" fill="currentColor"/>
-                                    <circle cx="7" cy="14" r="2" fill="white"/>
-                                    <circle cx="17" cy="14" r="2" fill="white"/>
-                                    <path d="M7 8H17V10H7V8Z" fill="white"/>
-                                    <path d="M5 12H19V14H5V12Z" fill="white"/>
-                                </svg>
+                                <img src="svgicons_forameneties/parkinglot.svg" alt="Free Parking" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
                             </div>
                             <h4>FREE PARKING</h4>
                         </div>
                         
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="8" y="2" width="8" height="20" rx="1" fill="currentColor"/>
-                                    <rect x="10" y="4" width="4" height="2" fill="white"/>
-                                    <rect x="10" y="8" width="4" height="2" fill="white"/>
-                                    <rect x="10" y="12" width="4" height="2" fill="white"/>
-                                    <rect x="10" y="16" width="4" height="2" fill="white"/>
-                                    <circle cx="12" cy="6" r="1" fill="white"/>
-                                    <circle cx="12" cy="10" r="1" fill="white"/>
-                                    <circle cx="12" cy="14" r="1" fill="white"/>
-                                    <circle cx="12" cy="18" r="1" fill="white"/>
-                                </svg>
+                                <img src="svgicons_forameneties/elevator.svg" alt="Elevator Access" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
                             </div>
                             <h4>ELEVATOR ACCESS</h4>
                         </div>
                         
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="3" y="4" width="18" height="16" rx="2" fill="currentColor"/>
-                                    <rect x="5" y="6" width="14" height="2" fill="white"/>
-                                    <rect x="5" y="10" width="14" height="2" fill="white"/>
-                                    <rect x="5" y="14" width="14" height="2" fill="white"/>
-                                    <circle cx="8" cy="8" r="1" fill="white"/>
-                                    <circle cx="16" cy="8" r="1" fill="white"/>
-                                </svg>
+                                <img src="svgicons_forameneties/kitchen.svg" alt="Fully Equipped Kitchen" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
                             </div>
                             <h4>FULLY EQUIPPED KITCHEN</h4>
                         </div>
                         
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" fill="currentColor"/>
-                                    <circle cx="12" cy="10" r="3" fill="white"/>
-                                    <path d="M12 2L12 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M12 16L12 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M2 10L4 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M20 10L22 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                                <img src="svgicons_forameneties/oldtown.svg" alt="Steps From Old Town" style="width: 18px; height: 18px; filter: brightness(0) invert(1);">
                             </div>
                             <h4>STEPS FROM OLD TOWN</h4>
                         </div>
@@ -154,104 +184,56 @@
             <div class="amenities-grid">
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="4" width="18" height="16" rx="2" fill="currentColor"/>
-                            <rect x="5" y="6" width="14" height="2" fill="white"/>
-                            <rect x="5" y="10" width="14" height="2" fill="white"/>
-                            <rect x="5" y="14" width="14" height="2" fill="white"/>
-                            <circle cx="8" cy="8" r="1" fill="white"/>
-                            <circle cx="16" cy="8" r="1" fill="white"/>
-                        </svg>
+                        <img src="svgicons_forameneties/kitchen.svg" alt="Kitchen" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>FULLY EQUIPPED KITCHEN</h3>
                     <p>Modern kitchen with premium appliances, cookware, and all necessary utensils for your culinary needs</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" fill="currentColor"/>
-                            <circle cx="12" cy="10" r="3" fill="white"/>
-                            <path d="M12 2L12 4" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M12 16L12 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M2 10L4 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M20 10L22 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                        <img src="svgicons_forameneties/oldtown.svg" alt="Old Town Location" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>SECONDS FROM OLD TOWN</h3>
                     <p>Prime location just minutes away from the historic old town and downtown area for easy exploration</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6C3 4.9 3.9 4 5 4H19C20.1 4 21 4.9 21 6V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V6Z" fill="currentColor"/>
-                            <circle cx="8" cy="8" r="2" fill="white"/>
-                            <circle cx="16" cy="8" r="2" fill="white"/>
-                            <path d="M6 12H18V14H6V12Z" fill="white"/>
-                            <path d="M8 16H16V18H8V16Z" fill="white"/>
-                            <circle cx="12" cy="17" r="1" fill="currentColor"/>
-                        </svg>
-                </div>
+                        <img src="svgicons_forameneties/washing machine.svg" alt="Washing Machine" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
+                    </div>
                     <h3>WASHING MACHINE</h3>
                     <p>Convenient in-unit washing machine for your laundry needs during your stay</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 8C3 6.9 3.9 6 5 6H19C20.1 6 21 6.9 21 8V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V8Z" fill="currentColor"/>
-                            <circle cx="7" cy="14" r="2" fill="white"/>
-                            <circle cx="17" cy="14" r="2" fill="white"/>
-                            <path d="M7 8H17V10H7V8Z" fill="white"/>
-                            <path d="M5 12H19V14H5V12Z" fill="white"/>
-                        </svg>
+                        <img src="svgicons_forameneties/parkinglot.svg" alt="Parking" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>PARKING</h3>
                     <p>Convenient parking space available for your vehicle during your stay</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6C3 4.9 3.9 4 5 4H19C20.1 4 21 4.9 21 6V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V6Z" fill="currentColor"/>
-                            <path d="M7 8H17V10H7V8Z" fill="white"/>
-                            <path d="M7 12H17V14H7V12Z" fill="white"/>
-                            <path d="M7 16H13V18H7V16Z" fill="white"/>
-                            <circle cx="15" cy="17" r="1" fill="white"/>
-                        </svg>
+                        <img src="svgicons_forameneties/sofabed.svg" alt="Sofa Bed" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>CONVERTIBLE SOFA BED</h3>
                     <p>Adaptable couch that converts to a bed, comfortably accommodating up to 4 people</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2 3H22C23.1 3 24 3.9 24 5V19C24 20.1 23.1 21 22 21H2C0.9 21 0 20.1 0 19V5C0 3.9 0.9 3 2 3Z" fill="currentColor"/>
-                            <path d="M2 5H22V7H2V5Z" fill="white"/>
-                            <path d="M2 9H22V11H2V9Z" fill="white"/>
-                            <path d="M2 13H22V15H2V13Z" fill="white"/>
-                            <path d="M2 17H22V19H2V17Z" fill="white"/>
-                            <circle cx="20" cy="18" r="1" fill="white"/>
-                        </svg>
+                        <img src="svgicons_forameneties/wifi.svg" alt="WiFi" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>FREE WIFI</h3>
                     <p>High-speed internet connection included for all your digital needs during your stay</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20Z" fill="currentColor"/>
-                            <path d="M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12S9.79 8 12 8 16 9.79 16 12 14.21 16 12 16Z" fill="white"/>
-                            <path d="M12 10C10.9 10 10 10.9 10 12S10.9 14 12 14 14 13.1 14 12 13.1 10 12 10Z" fill="white"/>
-                        </svg>
+                        <img src="svgicons_forameneties/air conditioning.svg" alt="Air Conditioning" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>AIR CONDITIONING</h3>
                     <p>Climate control system to ensure your comfort throughout your stay</p>
                 </div>
                 <div class="amenity-card">
                     <div class="amenity-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
-                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <img src="svgicons_forameneties/quiet location.svg" alt="Quiet Location" style="width: 32px; height: 32px; filter: brightness(0) invert(1);">
                     </div>
                     <h3>QUIET LOCATION</h3>
                     <p>Peaceful corner of Old Town away from the hustle and bustle, perfect for relaxation</p>
@@ -349,7 +331,7 @@
                     <img src="imagens/pescadores.jpg" alt="Pescadores Beach">
                     <div class="gallery-overlay">
                         <h3>Pescadores Beach</h3>
-                        <p>Beautiful beach view from the property</p>
+                        <p>Beautiful beach just steps away from Casa Solar</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="exterior" onclick="openLightbox('imagens/East-view-Praia-do-Peneco.jpg')">
@@ -374,7 +356,6 @@
             <div class="tabs-container">
                 <div class="tabs-navigation">
                     <button class="tab-button active" onclick="showTab('beaches')">Beaches</button>
-                    <button class="tab-button" onclick="showTab('dining')">Dining</button>
                     <button class="tab-button" onclick="showTab('nightlife')">Nightlife</button>
                     <button class="tab-button" onclick="showTab('activities')">Activities</button>
                 </div>
@@ -384,7 +365,7 @@
                     <div class="tab-panel active" id="beaches">
                         <div class="tab-layout">
                             <div class="tab-image">
-                                <img src="imagens/pescadores.jpg" alt="Albufeira Beaches">
+                                <img src="images_discover_albufeira/Praia-da-Falesia-aerial.jpg" alt="Albufeira Beaches">
                             </div>
                             <div class="tab-text">
                                 <h3>Stunning Beaches</h3>
@@ -394,25 +375,6 @@
                                     <li>Praia do Túnel - 1 min walk</li>
                                     <li>Praia de São Rafael - 5 min drive</li>
                                     <li>Praia da Falésia - 15 min drive</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Dining Tab -->
-                    <div class="tab-panel" id="dining">
-                        <div class="tab-layout">
-                            <div class="tab-image">
-                                <img src="imagens/oldtown.jpeg" alt="Albufeira Dining">
-                            </div>
-                            <div class="tab-text">
-                                <h3>Local Cuisine</h3>
-                                <p>Experience authentic Portuguese flavors in Albufeira's charming restaurants and cafes. From fresh seafood to traditional pastries, there's something for every palate.</p>
-                                <ul class="attraction-list">
-                                    <li>Old Town Restaurants - 2 min walk</li>
-                                    <li>Fresh Fish Markets - 5 min walk</li>
-                                    <li>Traditional Cafés - 1 min walk</li>
-                                    <li>Fine Dining - 10 min drive</li>
                                 </ul>
                             </div>
                         </div>
@@ -428,7 +390,7 @@
                                 <h3>Vibrant Nightlife</h3>
                                 <p>Discover Albufeira's exciting nightlife scene. From cozy bars to lively clubs, enjoy the perfect evening entertainment just steps from your accommodation.</p>
                                 <ul class="attraction-list">
-                                    <li>Strip Bars & Clubs - 5 min walk</li>
+                                    <li>Oura Strip - 5 min walk</li>
                                     <li>Old Town Bars - 2 min walk</li>
                                     <li>Beach Bars - 3 min walk</li>
                                     <li>Live Music Venues - 8 min walk</li>
@@ -515,30 +477,94 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section footer-main">
                     <h3>CASA SOLAR</h3>
-                    <p>Experience the perfect holiday in our fully equipped 1-bedroom apartment. Perfect for couples and small groups seeking comfort and convenience in the heart of Old Town.</p>
+                    <p class="footer-description">A beautifully designed 1-bedroom apartment in the heart of Old Town Albufeira. Featuring a spacious living room with open kitchen, modern amenities, and just steps away from the beach. Perfect for couples seeking comfort, convenience, and the authentic Portuguese experience.</p>
+                    <div class="footer-highlights">
+                        <span class="highlight">✓ Beach Access</span>
+                        <span class="highlight">✓ Old Town Location</span>
+                        <span class="highlight">✓ Modern Amenities</span>
+                    </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>NAVIGATION</h3>
-                    <p><a href="#home">Home</a></p>
-                    <p><a href="#about">About</a></p>
-                    <p><a href="#amenities">Amenities</a></p>
-                    <p><a href="#gallery">Gallery</a></p>
-                    <p><a href="#discover">Discover</a></p>
-                    <p><a href="#contact">Book Now</a></p>
+                <div class="footer-section footer-links">
+                    <h3>EXPLORE</h3>
+                    <div class="footer-nav">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#amenities">Amenities</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#discover">Discover</a>
+                        <a href="#contact">Book Now</a>
+                    </div>
                 </div>
                 
-
+                <div class="footer-section footer-support">
+                    <h3>SUPPORT</h3>
+                    <p class="support-text">Need assistance with your booking or have questions about your stay?</p>
+                    <a href="mailto:support@casasolar-albufeira.com" class="support-email">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        support@casasolar-albufeira.com
+                    </a>
+                </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Casa Solar. All rights reserved.</p>
+                <p>&copy; 2024 Casa Solar. All rights reserved. | Albufeira, Portugal</p>
             </div>
         </div>
     </footer>
+    <!-- Language Selector Widget -->
+    <div class="language-widget" id="languageWidget">
+        <div class="language-current" onclick="toggleLanguageMenu()">
+            <img src="svg/united-kingdom-svgrepo-com.svg" alt="English" class="language-flag">
+            <span class="language-text">EN</span>
+            <span class="language-arrow">▼</span>
+        </div>
+        <div class="language-menu" id="languageMenu">
+            <div class="language-option" onclick="selectLanguage('en', 'svg/united-kingdom-svgrepo-com.svg', 'English')">
+                <img src="svg/united-kingdom-svgrepo-com.svg" alt="English" class="language-flag">
+                <span>English</span>
+            </div>
+            <div class="language-option" onclick="selectLanguage('pt', 'svg/portugal-svgrepo-com.svg', 'Português')">
+                <img src="svg/portugal-svgrepo-com.svg" alt="Portuguese" class="language-flag">
+                <span>Português</span>
+            </div>
+            <div class="language-option" onclick="selectLanguage('fr', 'svg/france-svgrepo-com.svg', 'Français')">
+                <img src="svg/france-svgrepo-com.svg" alt="French" class="language-flag">
+                <span>Français</span>
+            </div>
+            <div class="language-option" onclick="selectLanguage('de', 'svg/germany-svgrepo-com.svg', 'Deutsch')">
+                <img src="svg/germany-svgrepo-com.svg" alt="German" class="language-flag">
+                <span>Deutsch</span>
+            </div>
+            <div class="language-option" onclick="selectLanguage('es', 'svg/spain-svgrepo-com.svg', 'Español')">
+                <img src="svg/spain-svgrepo-com.svg" alt="Spanish" class="language-flag">
+                <span>Español</span>
+            </div>
+            <div class="language-option" onclick="selectLanguage('it', 'svg/italy-svgrepo-com.svg', 'Italiano')">
+                <img src="svg/italy-svgrepo-com.svg" alt="Italian" class="language-flag">
+                <span>Italiano</span>
+            </div>
+            <div class="language-option" onclick="selectLanguage('nl', 'svg/netherlands-svgrepo-com.svg', 'Nederlands')">
+                <img src="svg/netherlands-svgrepo-com.svg" alt="Dutch" class="language-flag">
+                <span>Nederlands</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
     <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
