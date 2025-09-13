@@ -151,8 +151,8 @@ const translations = {
                 title: "Stunning Beaches",
                 description: "Explore Albufeira's golden sand beaches with crystal-clear waters. Praia dos Pescadores and Praia do Túnel are just a short walk from Casa Solar.",
                 attractions: [
-                    "Praia dos Pescadores - 3 min walk",
-                    "Praia do Túnel - 1 min walk",
+                    "Praia dos Pescadores - 10 min walk",
+                    "Praia do Túnel - 7 min walk",
                     "Praia de São Rafael - 5 min drive",
                     "Praia da Falésia - 15 min drive"
                 ]
@@ -161,19 +161,19 @@ const translations = {
                 title: "Vibrant Nightlife",
                 description: "Discover Albufeira's exciting nightlife scene. From cozy bars to lively clubs, enjoy the perfect evening entertainment just steps from your accommodation.",
                 attractions: [
-                    "Oura Strip - 5 min walk",
+                    "Oura Strip - 5 min drive",
                     "Old Town Bars - 2 min walk",
                     "Beach Bars - 3 min walk",
-                    "Live Music Venues - 8 min walk"
+                    "Live Music Venues - 10 min walk"
                 ]
             },
             activities: {
                 title: "Adventure & Culture",
                 description: "Immerse yourself in Albufeira's rich culture and exciting activities. From water sports to historical sites, create unforgettable memories during your stay.",
                 attractions: [
-                    "Boat Trips & Tours - 5 min walk",
-                    "Water Sports - 3 min walk",
-                    "Historical Sites - 10 min walk",
+                    "Boat Trips & Tours (Marina) - 2 min drive",
+                    "Waterpark (Zoomarine) - 15 min drive",
+                    "Historical Sites - 3 min walk",
                     "Golf Courses - 15 min drive"
                 ]
             }
@@ -258,16 +258,16 @@ const translations = {
         // Hero Section
         hero: {
             title: "CASA SOLAR",
-            subtitle: "SEU REFÚGIO PERFEITO NO CENTRO HISTÓRICO",
+            subtitle: "O TEU REFÚGIO PERFEITO NO CENTRO HISTÓRICO",
             bookButton: "RESERVAR AGORA"
         },
         
         // About Section
         about: {
             title: "SOBRE A CASA SOLAR",
-            subtitle: "Experimente conforto e conveniência no coração do Centro Histórico",
-            heading: "SEU REFÚGIO PERFEITO",
-            description: "A Casa Solar é um apartamento de 1 quarto totalmente equipado com uma sala de estar espaçosa e área de cozinha integrada, perfeitamente projetado para conforto e conveniência. Localizado no canto tranquilo do Centro Histórico, este apartamento incrível oferece o melhor dos dois mundos - ambiente pacífico com fácil acesso a toda a ação.",
+            subtitle: "Experimenta conforto e conveniência no coração do Centro Histórico",
+            heading: "O TEU REFÚGIO PERFEITO",
+            description: "A Casa Solar é um apartamento de 1 quarto totalmente equipado com uma sala de estar espaçosa e área de cozinha integrada, perfeitamente concebido para conforto e conveniência. Localizado no canto tranquilo do Centro Histórico, este apartamento incrível oferece o melhor dos dois mundos - ambiente pacífico com fácil acesso a toda a animação.",
             features: {
                 parking: "ESTACIONAMENTO GRATUITO",
                 elevator: "ACESSO POR ELEVADOR",
@@ -282,7 +282,7 @@ const translations = {
             items: {
                 kitchen: {
                     title: "COZINHA TOTALMENTE EQUIPADA",
-                    description: "Cozinha moderna com eletrodomésticos premium, utensílios de cozinha e todos os utensílios necessários para suas necessidades culinárias"
+                    description: "Cozinha moderna com electrodomésticos premium, utensílios de cozinha e todos os utensílios necessários para as tuas necessidades culinárias"
                 },
                 location: {
                     title: "SEGUNDOS DO CENTRO HISTÓRICO",
@@ -290,11 +290,11 @@ const translations = {
                 },
                 washing: {
                     title: "MÁQUINA DE LAVAR",
-                    description: "Máquina de lavar conveniente na unidade para suas necessidades de lavanderia durante sua estadia"
+                    description: "Máquina de lavar conveniente na unidade para as tuas necessidades de lavandaria durante a tua estadia"
                 },
                 parking: {
                     title: "ESTACIONAMENTO",
-                    description: "Vaga de estacionamento conveniente disponível para seu veículo durante sua estadia"
+                    description: "Vaga de estacionamento conveniente disponível para o teu veículo durante a tua estadia"
                 },
                 sofa: {
                     title: "SOFÁ-CAMA CONVERSÍVEL",
@@ -302,15 +302,15 @@ const translations = {
                 },
                 wifi: {
                     title: "WI-FI GRATUITO",
-                    description: "Conexão de internet de alta velocidade incluída para todas as suas necessidades digitais durante sua estadia"
+                    description: "Ligação à internet de alta velocidade incluída para todas as tuas necessidades digitais durante a tua estadia"
                 },
                 ac: {
                     title: "AR CONDICIONADO",
-                    description: "Sistema de controle climático para garantir seu conforto durante toda sua estadia"
+                    description: "Sistema de controlo climático para garantir o teu conforto durante toda a tua estadia"
                 },
                 quiet: {
                     title: "LOCALIZAÇÃO TRANQUILA",
-                    description: "Canto pacífico do Centro Histórico longe do agito, perfeito para relaxamento"
+                    description: "Canto pacífico do Centro Histórico longe da animação, perfeito para relaxamento"
                 }
             }
         },
@@ -318,26 +318,26 @@ const translations = {
         // Gallery Section
         gallery: {
             title: "GALERIA",
-            subtitle: "Faça um tour visual da nossa bela propriedade",
+            subtitle: "Faz um tour visual da nossa bela propriedade",
             filters: {
                 all: "Todos",
                 interior: "Interior",
                 kitchen: "Cozinha",
                 bedroom: "Quarto",
-                bathroom: "Banheiro"
+                bathroom: "Casa de banho"
             },
             items: {
                 hallway: {
                     title: "Corredor",
-                    description: "Entrada brilhante e acolhedora conectando todas as áreas"
+                    description: "Entrada brilhante e acolhedora ligando todas as áreas"
                 },
                 bedroom: {
                     title: "Quarto",
                     description: "Área de dormir confortável e pacífica"
                 },
                 bathroom: {
-                    title: "Banheiro",
-                    description: "Banheiro limpo e moderno com todas as comodidades"
+                    title: "Casa de banho",
+                    description: "Casa de banho limpa e moderna com todas as comodidades"
                 },
                 kitchen: {
                     title: "Cozinha",
@@ -357,7 +357,7 @@ const translations = {
                 },
                 machines: {
                     title: "Canto das Máquinas",
-                    description: "Área de lavanderia com máquina de lavar"
+                    description: "Área de lavandaria com máquina de lavar"
                 },
                 downtown: {
                     title: "Centro/Centro Histórico",
@@ -365,7 +365,7 @@ const translations = {
                 },
                 parking: {
                     title: "Estacionamento",
-                    description: "Vaga de estacionamento conveniente para seu veículo"
+                    description: "Vaga de estacionamento conveniente para o teu veículo"
                 },
                 pescadores: {
                     title: "Praia dos Pescadores",
@@ -385,35 +385,35 @@ const translations = {
             tabs: {
                 beaches: "Praias",
                 nightlife: "Vida Noturna",
-                activities: "Atividades"
+                activities: "Actividades"
             },
             beaches: {
                 title: "Praias Deslumbrantes",
-                description: "Explore as praias de areia dourada de Albufeira com águas cristalinas. A Praia dos Pescadores e a Praia do Túnel estão a uma curta caminhada da Casa Solar.",
+                description: "Explora as praias de areia dourada de Albufeira com águas cristalinas. A Praia dos Pescadores e a Praia do Túnel estão a uma curta caminhada da Casa Solar.",
                 attractions: [
-                    "Praia dos Pescadores - 3 min a pé",
-                    "Praia do Túnel - 1 min a pé",
+                    "Praia dos Pescadores - 10 min a pé",
+                    "Praia do Túnel - 7 min a pé",
                     "Praia de São Rafael - 5 min de carro",
                     "Praia da Falésia - 15 min de carro"
                 ]
             },
             nightlife: {
                 title: "Vida Noturna Vibrante",
-                description: "Descubra a emocionante cena de vida noturna de Albufeira. De bares aconchegantes a clubes animados, desfrute do entretenimento noturno perfeito a poucos passos da sua acomodação.",
+                description: "Descobre a emocionante cena de vida noturna de Albufeira. De bares aconchegantes a clubes animados, desfruta do entretenimento noturno perfeito a poucos passos da tua acomodação.",
                 attractions: [
-                    "Oura Strip - 5 min a pé",
+                    "Oura Strip - 5 min de carro",
                     "Bares do Centro Histórico - 2 min a pé",
                     "Bares da Praia - 3 min a pé",
-                    "Locais de Música ao Vivo - 8 min a pé"
+                    "Locais de Música ao Vivo - 10 min a pé"
                 ]
             },
             activities: {
                 title: "Aventura e Cultura",
-                description: "Mergulhe na rica cultura e atividades emocionantes de Albufeira. De esportes aquáticos a locais históricos, crie memórias inesquecíveis durante sua estadia.",
+                description: "Mergulha na rica cultura e actividades emocionantes de Albufeira. De desportos aquáticos a locais históricos, cria memórias inesquecíveis durante a tua estadia.",
                 attractions: [
-                    "Passeios de Barco e Tours - 5 min a pé",
-                    "Esportes Aquáticos - 3 min a pé",
-                    "Locais Históricos - 10 min a pé",
+                    "Passeios de Barco e Tours (Marina) - 2 min de carro",
+                    "Waterpark (Zoomarine) - 15 min de carro",
+                    "Locais Históricos - 3 min a pé",
                     "Campos de Golfe - 15 min de carro"
                 ]
             }
@@ -421,7 +421,7 @@ const translations = {
         
         // Contact Section
         contact: {
-            title: "RESERVE SUA ESTADIA"
+            title: "RESERVA A TUA ESTADIA"
         },
         
         // Booking Widget
@@ -433,7 +433,7 @@ const translations = {
             guestsPlural: "{{NumberOfGuests}} hóspedes",
             location: "Localização",
             totalPrice: "Preço total:",
-            selectDates: "Selecione as datas para ver o preço total",
+            selectDates: "Selecciona as datas para ver o preço total",
             from: "A partir de",
             perNight: "por noite",
             bookNow: "Reservar Agora",
@@ -443,9 +443,9 @@ const translations = {
             children: '{"one":"criança","other":"crianças"}',
             childrenDescription: "Idades {minAge}-{maxAge}",
             childrenNotAllowed: "Não adequado para crianças",
-            infants: '{"one":"bebê","other":"bebês"}',
+            infants: '{"one":"bebé","other":"bebés"}',
             infantsDescription: "Abaixo de {maxAge}",
-            infantsNotAllowed: "Não adequado para bebês",
+            infantsNotAllowed: "Não adequado para bebés",
             pets: '{"one":"animal de estimação","other":"animais de estimação"}',
             petsNotAllowed: "Não permitido",
             done: "Concluído"
@@ -454,7 +454,7 @@ const translations = {
         // Footer
         footer: {
             title: "CASA SOLAR",
-            description: "Um apartamento de 1 quarto lindamente projetado no coração do Centro Histórico de Albufeira. Com uma sala de estar espaçosa com cozinha integrada, comodidades modernas e a poucos passos da praia. Perfeito para casais que buscam conforto, conveniência e a autêntica experiência portuguesa.",
+            description: "Um apartamento de 1 quarto lindamente concebido no coração do Centro Histórico de Albufeira. Com uma sala de estar espaçosa com cozinha integrada, comodidades modernas e a poucos passos da praia. Perfeito para casais que procuram conforto, conveniência e a autêntica experiência portuguesa.",
             highlights: {
                 beach: "✓ Acesso à Praia",
                 oldTown: "✓ Localização no Centro Histórico",
@@ -462,14 +462,14 @@ const translations = {
             },
             explore: "EXPLORAR",
             support: "SUPORTE",
-            supportText: "Precisa de assistência com sua reserva ou tem dúvidas sobre sua estadia?",
+            supportText: "Precisas de assistência com a tua reserva ou tens dúvidas sobre a tua estadia?",
             copyright: "© 2024 Casa Solar. Todos os direitos reservados. | Albufeira, Portugal"
         },
         
         // Mobile Menu
         mobile: {
-            footerText: "Casa Solar - Seu Refúgio Perfeito no Centro Histórico",
-            contactUs: "Entre em Contato"
+            footerText: "Casa Solar - O Teu Refúgio Perfeito no Centro Histórico",
+            contactUs: "Contacta-nos"
         },
         
         // Language Names

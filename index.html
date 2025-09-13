@@ -7,10 +7,7 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images_discover_albufeira/CASA SOLAR logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images_discover_albufeira/CASA SOLAR logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images_discover_albufeira/CASA SOLAR logo.png">
     <link rel="apple-touch-icon" href="images_discover_albufeira/CASA SOLAR logo.png">
-    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Casa Solar&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;images_discover_albufeira/CASA SOLAR logo.png&quot;,&quot;sizes&quot;:&quot;any&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,89 +253,136 @@
                 <button class="filter-btn" onclick="filterGallery('bathroom')">Bathroom</button>
             </div>
             
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="interior" onclick="openLightbox('imagens/hallway.jpg')">
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="interior">
                     <img src="imagens/hallway.jpg" alt="Hallway">
                     <div class="gallery-overlay">
-                        <h3>Hallway</h3>
-                        <p>Bright and welcoming entrance connecting all areas</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Hallway</h3>
+                            <p class="overlay-category">Interior</p>
+                            <a href="#" class="view-btn" data-src="imagens/hallway.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="bedroom" onclick="openLightbox('imagens/quarto.jpg')">
+
+                <div class="gallery-item" data-category="bedroom">
                     <img src="imagens/quarto.jpg" alt="Bedroom">
                     <div class="gallery-overlay">
-                        <h3>Bedroom</h3>
-                        <p>Comfortable and peaceful sleeping area</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Bedroom</h3>
+                            <p class="overlay-category">Bedroom</p>
+                            <a href="#" class="view-btn" data-src="imagens/quarto.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="bathroom" onclick="openLightbox('imagens/wc.jpg')">
+
+                <div class="gallery-item" data-category="bathroom">
                     <img src="imagens/wc.jpg" alt="Bathroom">
                     <div class="gallery-overlay">
-                        <h3>Bathroom</h3>
-                        <p>Clean and modern bathroom with all amenities</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Bathroom</h3>
+                            <p class="overlay-category">Bathroom</p>
+                            <a href="#" class="view-btn" data-src="imagens/wc.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="kitchen" onclick="openLightbox('imagens/cozinha.jpg')">
+
+                <div class="gallery-item" data-category="kitchen">
                     <img src="imagens/cozinha.jpg" alt="Kitchen">
                     <div class="gallery-overlay">
-                        <h3>Kitchen</h3>
-                        <p>Fully equipped modern kitchen space</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Kitchen</h3>
+                            <p class="overlay-category">Kitchen</p>
+                            <a href="#" class="view-btn" data-src="imagens/cozinha.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="kitchen" onclick="openLightbox('imagens/cozinha2.jpg')">
+
+                <div class="gallery-item" data-category="kitchen">
                     <img src="imagens/cozinha2.jpg" alt="Kitchen Detail">
                     <div class="gallery-overlay">
-                        <h3>Kitchen</h3>
-                        <p>Additional view of the kitchen area</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Kitchen Detail</h3>
+                            <p class="overlay-category">Kitchen</p>
+                            <a href="#" class="view-btn" data-src="imagens/cozinha2.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="interior" onclick="openLightbox('imagens/livingroom1.jpg')">
+
+                <div class="gallery-item" data-category="interior">
                     <img src="imagens/livingroom1.jpg" alt="Dining Room">
                     <div class="gallery-overlay">
-                        <h3>Dining Room</h3>
-                        <p>Spacious dining area for meals and gatherings</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Dining Room</h3>
+                            <p class="overlay-category">Interior</p>
+                            <a href="#" class="view-btn" data-src="imagens/livingroom1.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="interior" onclick="openLightbox('imagens/livingroom2.jpg')">
+
+                <div class="gallery-item" data-category="interior">
                     <img src="imagens/livingroom2.jpg" alt="Living Room">
                     <div class="gallery-overlay">
-                        <h3>Living Room</h3>
-                        <p>Comfortable living space for relaxation</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Living Room</h3>
+                            <p class="overlay-category">Interior</p>
+                            <a href="#" class="view-btn" data-src="imagens/livingroom2.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="interior" onclick="openLightbox('imagens/washingmachine.jpg')">
+
+                <div class="gallery-item" data-category="interior">
                     <img src="imagens/washingmachine.jpg" alt="Machines Corner">
                     <div class="gallery-overlay">
-                        <h3>Machines Corner</h3>
-                        <p>Laundry area with washing machine</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Machines Corner</h3>
+                            <p class="overlay-category">Interior</p>
+                            <a href="#" class="view-btn" data-src="imagens/washingmachine.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="exterior" onclick="openLightbox('imagens/oldtown.jpeg')">
+
+                <div class="gallery-item" data-category="exterior">
                     <img src="imagens/oldtown.jpeg" alt="Downtown/Old Town">
                     <div class="gallery-overlay">
-                        <h3>Downtown/Old Town</h3>
-                        <p>Historic old town area just steps away</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Downtown/Old Town</h3>
+                            <p class="overlay-category">Exterior</p>
+                            <a href="#" class="view-btn" data-src="imagens/oldtown.jpeg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="exterior" onclick="openLightbox('imagens/outdoor.jpeg')">
+
+                <div class="gallery-item" data-category="exterior">
                     <img src="imagens/outdoor.jpeg" alt="Parking Lot">
                     <div class="gallery-overlay">
-                        <h3>Parking Lot</h3>
-                        <p>Convenient parking space for your vehicle</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Parking Lot</h3>
+                            <p class="overlay-category">Exterior</p>
+                            <a href="#" class="view-btn" data-src="imagens/outdoor.jpeg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="exterior" onclick="openLightbox('imagens/pescadores.jpg')">
+
+                <div class="gallery-item" data-category="exterior">
                     <img src="imagens/pescadores.jpg" alt="Pescadores Beach">
                     <div class="gallery-overlay">
-                        <h3>Pescadores Beach</h3>
-                        <p>Beautiful beach just steps away from Casa Solar</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Pescadores Beach</h3>
+                            <p class="overlay-category">Exterior</p>
+                            <a href="#" class="view-btn" data-src="imagens/pescadores.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-category="exterior" onclick="openLightbox('imagens/East-view-Praia-do-Peneco.jpg')">
+
+                <div class="gallery-item" data-category="exterior">
                     <img src="imagens/East-view-Praia-do-Peneco.jpg" alt="Peneco Beach">
                     <div class="gallery-overlay">
-                        <h3>Peneco Beach</h3>
-                        <p>Stunning view of Peneco Beach</p>
+                        <div class="overlay-content">
+                            <h3 class="overlay-title">Peneco Beach</h3>
+                            <p class="overlay-category">Exterior</p>
+                            <a href="#" class="view-btn" data-src="imagens/East-view-Praia-do-Peneco.jpg" title="View Full Size">⛶</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -371,10 +415,10 @@
                                 <h3>Stunning Beaches</h3>
                                 <p>Explore Albufeira's golden sand beaches with crystal-clear waters. Praia dos Pescadores and Praia do Túnel are just a short walk from Casa Solar.</p>
                                 <ul class="attraction-list">
-                                    <li>Praia dos Pescadores - 3 min walk</li>
-                                    <li>Praia do Túnel - 1 min walk</li>
-                                    <li>Praia de São Rafael - 5 min drive</li>
-                                    <li>Praia da Falésia - 15 min drive</li>
+                                    <li>Praia dos Pescadores - 10 min a pé</li>
+                                    <li>Praia do Túnel - 7 min a pé</li>
+                                    <li>Praia de São Rafael - 5 min de carro</li>
+                                    <li>Praia da Falésia - 15 min de carro</li>
                                 </ul>
                             </div>
                         </div>
@@ -384,16 +428,16 @@
                     <div class="tab-panel" id="nightlife">
                         <div class="tab-layout">
                             <div class="tab-image">
-                                <img src="imagens/outdoor.jpeg" alt="Albufeira Nightlife">
+                                <img src="imagens/ourastrip.jpg" alt="Albufeira Nightlife">
                             </div>
                             <div class="tab-text">
                                 <h3>Vibrant Nightlife</h3>
                                 <p>Discover Albufeira's exciting nightlife scene. From cozy bars to lively clubs, enjoy the perfect evening entertainment just steps from your accommodation.</p>
                                 <ul class="attraction-list">
-                                    <li>Oura Strip - 5 min walk</li>
-                                    <li>Old Town Bars - 2 min walk</li>
-                                    <li>Beach Bars - 3 min walk</li>
-                                    <li>Live Music Venues - 8 min walk</li>
+                                    <li>Oura Strip - 5 min de carro</li>
+                                    <li>Bares do Centro Histórico - 2 min a pé</li>
+                                    <li>Bares da Praia - 3 min a pé</li>
+                                    <li>Locais de Música ao Vivo - 10 min a pé</li>
                                 </ul>
                             </div>
                         </div>
@@ -403,16 +447,16 @@
                     <div class="tab-panel" id="activities">
                         <div class="tab-layout">
                             <div class="tab-image">
-                                <img src="imagens/East-view-Praia-do-Peneco.jpg" alt="Albufeira Activities">
+                                <img src="imagens/zoomarine.jpg" alt="Albufeira Activities">
                             </div>
                             <div class="tab-text">
                                 <h3>Adventure & Culture</h3>
                                 <p>Immerse yourself in Albufeira's rich culture and exciting activities. From water sports to historical sites, create unforgettable memories during your stay.</p>
                                 <ul class="attraction-list">
-                                    <li>Boat Trips & Tours - 5 min walk</li>
-                                    <li>Water Sports - 3 min walk</li>
-                                    <li>Historical Sites - 10 min walk</li>
-                                    <li>Golf Courses - 15 min drive</li>
+                                    <li>Passeios de Barco e Tours (Marina) - 2 min de carro</li>
+                                    <li>Waterpark (Zoomarine) - 15 min de carro</li>
+                                    <li>Locais Históricos - 3 min a pé</li>
+                                    <li>Campos de Golfe - 15 min de carro</li>
                                 </ul>
                             </div>
                         </div>
@@ -472,6 +516,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img src="" alt="" id="lightboxImage">
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

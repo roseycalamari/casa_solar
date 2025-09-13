@@ -113,7 +113,7 @@ class CasaSolar {
             this.showHeader();
             return;
         }
-        
+
         // Hide header when scrolling down, show when scrolling up
         if (scrollDirection === 'down' && this.isHeaderVisible) {
             this.hideHeader();
@@ -126,16 +126,20 @@ class CasaSolar {
      * Hide the header with smooth animation
      */
     hideHeader() {
-        this.navbar.classList.add('hidden');
-        this.isHeaderVisible = false;
+        if (this.isHeaderVisible) {
+            this.navbar.classList.add('nav-header-hidden');
+            this.isHeaderVisible = false;
+        }
     }
 
     /**
      * Show the header with smooth animation
      */
     showHeader() {
-        this.navbar.classList.remove('hidden');
-        this.isHeaderVisible = true;
+        if (!this.isHeaderVisible) {
+            this.navbar.classList.remove('nav-header-hidden');
+            this.isHeaderVisible = true;
+        }
     }
 
     /**
@@ -220,6 +224,12 @@ class CasaSolar {
                 event.preventDefault();
                 
                 const targetId = link.getAttribute('href');
+                
+                // Skip if targetId is empty, just '#', or not a valid selector
+                if (!targetId || targetId === '#' || targetId.length <= 1) {
+                    return;
+                }
+                
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
@@ -891,51 +901,122 @@ function showTab(tabName) {
     }
 }
 
-function filterGallery(category) {
-    // Remove active class from all filter buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(button => button.classList.remove('active'));
-    
-    // Add active class to clicked filter button
-    const activeButton = document.querySelector(`[onclick="filterGallery('${category}')"]`);
-    if (activeButton) {
-        activeButton.classList.add('active');
-    }
-    
-    // Get all gallery items
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const galleryGrid = document.querySelector('.gallery-grid');
-    
-    // Add loading state to grid
-    if (galleryGrid) {
-        galleryGrid.style.opacity = '0.7';
-    }
-    
-    // Filter and show/hide items with smooth transition
-    let visibleIndex = 0;
-    galleryItems.forEach((item, index) => {
-        const itemCategory = item.getAttribute('data-category');
+// Dynamic Gallery Class
+class DynamicGallery {
+    constructor() {
+        this.galleryGrid = document.getElementById('galleryGrid');
+        this.filterTabs = document.querySelectorAll('.filter-btn');
+        this.galleryItems = document.querySelectorAll('.gallery-item');
+        this.lightbox = document.getElementById('lightbox');
+        this.lightboxImage = document.getElementById('lightboxImage');
+        this.lightboxClose = document.getElementById('lightboxClose');
         
-        if (category === 'all' || itemCategory === category) {
-            // Show item with minimal stagger for faster performance
-            setTimeout(() => {
-                item.classList.remove('hidden');
-                item.style.order = visibleIndex;
-                visibleIndex++;
-            }, index * 20); // Reduced stagger delay
-        } else {
-            // Hide item
-            item.classList.add('hidden');
-        }
-    });
+        this.init();
+    }
     
-    // Remove loading state
-    setTimeout(() => {
-        if (galleryGrid) {
-            galleryGrid.style.opacity = '1';
-        }
-    }, galleryItems.length * 20 + 200);
+    init() {
+        this.bindEvents();
+        this.animateItemsOnLoad();
+    }
+    
+    bindEvents() {
+        // Filter functionality
+        this.filterTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                this.handleFilterClick(e.target);
+            });
+        });
+        
+        // Lightbox functionality
+        this.galleryItems.forEach(item => {
+            const viewBtn = item.querySelector('.view-btn');
+            const img = item.querySelector('img');
+            
+            viewBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.openLightbox(img.src, img.alt);
+            });
+            
+            img.addEventListener('click', () => {
+                this.openLightbox(img.src, img.alt);
+            });
+        });
+        
+        this.lightboxClose.addEventListener('click', () => {
+            this.closeLightbox();
+        });
+        
+        this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) {
+                this.closeLightbox();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeLightbox();
+            }
+        });
+    }
+    
+    handleFilterClick(clickedTab) {
+        // Remove active class from all tabs
+        this.filterTabs.forEach(tab => tab.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        clickedTab.classList.add('active');
+        
+        // Get filter value
+        const filterValue = clickedTab.getAttribute('onclick').match(/'([^']+)'/)[1];
+        
+        // Filter gallery items
+        this.filterGallery(filterValue);
+    }
+    
+    filterGallery(filter) {
+        this.galleryItems.forEach((item) => {
+            const category = item.getAttribute('data-category');
+            
+            if (filter === 'all' || category === filter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    
+    openLightbox(src, alt) {
+        this.lightboxImage.src = src;
+        this.lightboxImage.alt = alt;
+        this.lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    closeLightbox() {
+        this.lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    animateItemsOnLoad() {
+        // Simple gallery - no complex animations needed
+    }
 }
+
+// Global gallery instance
+let galleryInstance = null;
+
+// Gallery filtering function (integrated with gallery)
+function filterGallery(category) {
+    if (galleryInstance) {
+        galleryInstance.filterGallery(category);
+    }
+}
+
+// Initialize gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    galleryInstance = new DynamicGallery();
+});
 
 // Language Widget Functions
 function toggleLanguageMenu() {
