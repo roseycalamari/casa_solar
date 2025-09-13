@@ -934,7 +934,8 @@ class DynamicGallery {
             
             viewBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.openLightbox(img.src, img.alt);
+                const imageSrc = viewBtn.getAttribute('data-src');
+                this.openLightbox(imageSrc, img.alt);
             });
             
             img.addEventListener('click', () => {

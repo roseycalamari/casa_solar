@@ -99,6 +99,44 @@ body {
     border: 2px solid var(--primary-color);
 }
 
+/* Hero Book Button - Special Highlighted Style */
+.hero .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(173, 216, 230, 0.4);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1.2rem 2.5rem;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero .btn-primary:hover::before {
+    left: 100%;
+}
+
+.hero .btn-primary:hover {
+    background: linear-gradient(135deg, var(--white), var(--primary-color));
+    color: var(--text-dark);
+    border: 2px solid var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(173, 216, 230, 0.6);
+}
+
 /* Navigation */
 .nav {
     position: fixed;
@@ -190,6 +228,49 @@ body {
 
 .nav-links a:hover::before {
     width: 100%;
+}
+
+/* Special styling for Book Now button in navigation */
+.nav-links li:last-child a {
+    background: var(--primary-color);
+    color: var(--text-dark) !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-shadow: none;
+    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links li:last-child a::before {
+    display: none;
+}
+
+.nav-links li:last-child a:hover {
+    background: var(--white);
+    color: var(--text-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(173, 216, 230, 0.5);
+    text-shadow: none;
+}
+
+/* Mobile navigation Book Now button */
+.mobile-nav-links li:last-child a {
+    background: var(--primary-color);
+    color: var(--text-dark) !important;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(173, 216, 230, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-links li:last-child a:hover {
+    background: var(--white);
+    color: var(--text-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(173, 216, 230, 0.5);
 }
 
 .mobile-menu-toggle {
@@ -663,7 +744,7 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .lightbox.active {
@@ -671,35 +752,50 @@ body {
 }
 
 .lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90vw;
+    max-height: 90vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .lightbox img {
-    width: 100%;
-    height: 100%;
+    max-width: calc(90vw - 40px);
+    max-height: calc(90vh - 40px);
+    width: auto;
+    height: auto;
     object-fit: contain;
     border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-close {
     position: absolute;
-    top: -40px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.2);
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
     border: none;
-    color: white;
+    color: var(--text-dark);
     font-size: 1.5rem;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 10;
 }
 
 .lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1);
 }
 
 .hidden {
@@ -858,50 +954,6 @@ body {
     left: 0;
 }
 
-/* Lightbox */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    color: var(--white);
-    font-size: 3rem;
-    cursor: pointer;
-    background: var(--primary-color);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.lightbox-close:hover {
-    background: var(--white);
-    color: var(--text-dark);
-}
 
 
 /* Contact Section */
